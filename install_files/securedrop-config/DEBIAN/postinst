@@ -15,7 +15,7 @@ case "$1" in
     if [ -f "$apt_security_list" ]; then
         sed -i 's/deb\.torproject\.org\/torproject\.org/tor-apt.freedom.press/g' "$apt_security_list"
     fi
-    sudo apt remove linux-image-generic-lts-xenial linux-image-.*generic
+    sudo apt remove -y 'linux-image-generic-lts-xenial' 'linux-image-.*generic'
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
